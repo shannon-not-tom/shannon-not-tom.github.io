@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link></link>
-    <description></description>
-    <atom:link href="" rel="self" type="application/rss+xml" />
+    <title>not Tom's Page</title>
+    <link>https://shannon-not-tom.github.io/</link>
+    <description>Kinda a dev. kinda...</description>
+    <atom:link href="https://shannon-not-tom.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2026 01:21:54 GMT</lastBuildDate>
+    <language>en</language>
+    <item>
+      <title>Status Update</title>
+      <description>I&apos;m tired.</description>
+      <link>https://shannon-not-tom.github.io/</link>
+      <pubDate>Sat, 24 Oct 2026 01:21:54 GMT</pubDate>
+      <guid isPermaLink="false">status-1792804914464</guid>
+    </item>
   </channel>
 </rss>
