@@ -28,11 +28,11 @@
   "rss": {
     "enabled": true
   },
-  "lastUpdated": "2026-10-24T01:18:22.056Z",
-  "firstTimeSetup": true,
+  "lastUpdated": "2026-10-24T01:20:53.905Z",
+  "firstTimeSetup": false,
   "mode": "personal",
   "personalModeSnapshot": null,
-  "configVersion": 1,
+  "configVersion": 2,
   "businessProfile": {
     "enabled": false,
     "type": "",
