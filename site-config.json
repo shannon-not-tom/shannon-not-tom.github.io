@@ -1,7 +1,7 @@
 {
   "displayName": "not Tom",
   "bio": "Kinda a dev. kinda...",
-  "status": "",
+  "status": "I'm tired.",
   "theme": "dark",
   "background": {
     "type": "color",
@@ -28,7 +28,7 @@
   "rss": {
     "enabled": true
   },
-  "lastUpdated": "2026-10-24T01:20:53.905Z",
+  "lastUpdated": "2026-10-24T01:21:53.013Z",
   "firstTimeSetup": false,
   "mode": "personal",
   "personalModeSnapshot": null,
