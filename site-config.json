@@ -1,0 +1,52 @@
+{
+  "displayName": "not Tom",
+  "bio": "Kinda a dev. kinda...",
+  "status": "",
+  "theme": "dark",
+  "background": {
+    "type": "color",
+    "value": "#1a1a2e"
+  },
+  "pages": {
+    "gallery": true,
+    "music": true,
+    "videos": true,
+    "friends": true,
+    "guestbook": true,
+    "games": true
+  },
+  "directory": {
+    "listed": true
+  },
+  "customDomain": "",
+  "currentTrack": {
+    "filename": "",
+    "title": "",
+    "artist": ""
+  },
+  "videos": [],
+  "rss": {
+    "enabled": true
+  },
+  "lastUpdated": "2026-10-24T01:18:22.056Z",
+  "firstTimeSetup": true,
+  "mode": "personal",
+  "personalModeSnapshot": null,
+  "configVersion": 1,
+  "businessProfile": {
+    "enabled": false,
+    "type": "",
+    "name": "",
+    "category": "",
+    "address": {
+      "locality": "",
+      "region": "",
+      "country": ""
+    },
+    "phone": "",
+    "email": "",
+    "priceRange": "",
+    "services": [],
+    "hours": []
+  }
+}
