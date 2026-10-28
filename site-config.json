@@ -28,8 +28,8 @@
   "rss": {
     "enabled": true
   },
-  "lastUpdated": "2026-10-28T03:58:11.288Z",
-  "firstTimeSetup": false,
+  "lastUpdated": "2026-10-28T03:59:08.832Z",
+  "firstTimeSetup": true,
   "highScores": {
     "tetris": 0,
     "pacman": 0,
@@ -55,5 +55,42 @@
     "priceRange": "",
     "services": [],
     "hours": []
-  }
+  },
+  "tracks": [
+    {
+      "filename": "1-waiting-for-my-ruca.mp3",
+      "title": "1 waiting for my ruca",
+      "artist": "",
+      "album": "",
+      "playlist": ""
+    },
+    {
+      "filename": "2-40oz.-to-freedom.mp3",
+      "title": "2 40oz. to freedom",
+      "artist": "",
+      "album": "",
+      "playlist": ""
+    },
+    {
+      "filename": "3-smoke-two-joints.mp3",
+      "title": "3 smoke two joints",
+      "artist": "",
+      "album": "",
+      "playlist": ""
+    },
+    {
+      "filename": "4-we-re-only-gonna-die-for-our-arrogance.mp3",
+      "title": "4 we re only gonna die for our arrogance",
+      "artist": "",
+      "album": "",
+      "playlist": ""
+    },
+    {
+      "filename": "5-don-t-push.mp3",
+      "title": "5 don t push",
+      "artist": "",
+      "album": "",
+      "playlist": ""
+    }
+  ]
 }
