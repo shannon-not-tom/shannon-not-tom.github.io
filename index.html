@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-owner="shannon-not-tom">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' https: data: blob:; media-src 'self'; frame-src https://www.youtube.com; connect-src 'self' https://api.github.com https://f8rcwlcsz8.execute-api.us-east-1.amazonaws.com;" />
+  <title>My Page</title>
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="not Tom's Page" />
+  <meta property="og:description" content="I'm boring... very" />
+  <meta property="og:image" content="https://shannon-not-tom.github.io/assets/profile.webp" />
+  <meta property="og:url" content="I'm boring... very" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="not Tom's Page" />
+  <meta name="twitter:description" content="I'm boring... very" />
+  <meta name="twitter:image" content="https://shannon-not-tom.github.io/assets/profile.webp" />
+
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "not Tom",
+  "url": "https://shannon-not-tom.github.io",
+  "image": "https://shannon-not-tom.github.io/assets/profile.webp",
+  "description": "I'm boring... very",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://shannon-not-tom.github.io"
+  }
+}
+</script>
+</head>
+<body>
+  <script src="theme.js"></script>
+
+  <nav id="nav-drawer" aria-label="Site navigation"></nav>
+  <button id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">&#9776;</button>
+
+  <div id="top-bar">
+    <button id="login-btn" aria-label="Log in to edit your page">Log in</button>
+    <button id="logout-btn" aria-label="Log out">Log out</button>
+  </div>
+
+  <!-- ─── Device Login Modal ──────────────────────────────────────────────── -->
+  <div id="device-modal" class="hidden" role="dialog" aria-modal="true" aria-label="Log in">
+    <div id="device-modal-box" class="glass">
+      <p id="device-modal-hint">Enter this code on GitHub, then return here when done:</p>
+      <div id="device-code" aria-label="Device code"></div>
+      <div id="device-modal-actions">
+        <a id="device-open-btn" href="https://github.com/login/device" target="_blank" rel="noopener">Open GitHub →</a>
+        <button id="device-cancel-btn" class="btn-ghost" aria-label="Cancel login">Cancel</button>
+      </div>
+      <p id="device-modal-sub">You'll be asked to choose an account and authorize the app. When GitHub says "Congratulations, you're all set!" — close that tab and come back here.</p>
+      <p id="device-modal-status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <main id="profile-page">
+
+    <!-- ─── Header (scrolls away) ──────────────────────────────────────────── -->
+    <div id="profile-header">
+      <section id="cover-section" aria-label="Cover photo">
+        <img id="cover-photo" src="assets/cover.webp" alt="Cover photo" />
+        <button id="edit-cover" class="owner-only hidden" aria-label="Edit cover photo">
+          <img src="assets/photo-icon.svg" alt="" width="20" height="20" />
+        </button>
+      </section>
+
+      <div id="profile-identity">
+        <div id="profile-photo-wrap">
+          <img id="profile-photo" src="assets/profile.webp" alt="Profile photo" />
+          <div id="profile-photo-overlay" aria-hidden="true">
+            <img src="assets/photo-icon.svg" alt="" width="32" height="32" />
+          </div>
+        </div>
+        <div id="profile-meta">
+          <h1 id="display-name"></h1>
+          <p id="bio"></p>
+          <p id="status"></p>
+          <p id="last-updated" aria-label="Last updated"></p>
+          <button id="edit-profile-btn" class="btn-ghost owner-only hidden" aria-label="Edit profile">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Sticky Tab Bar ──────────────────────────────────────────────────── -->
+    <nav id="profile-tabs" aria-label="Profile sections">
+      <a href="#profile-main" id="tab-all" class="profile-tab tab-active" aria-label="Show all sections">All</a>
+    </nav>
+
+    <!-- ─── Two-column body ─────────────────────────────────────────────────── -->
+    <div id="profile-body">
+
+      <aside id="profile-left" aria-label="About">
+        <div id="about-card" class="profile-card">
+          <h2>About</h2>
+          <p id="about-bio"></p>
+          <p id="about-status"></p>
+          <p id="about-updated"></p>
+          <a id="about-domain" class="hidden" target="_blank" rel="noopener"></a>
+        </div>
+        <div id="friends-preview" class="profile-card hidden" aria-label="Friends">
+          <h2>Friends</h2>
+          <div id="friends-circles"></div>
+          <a href="friends.html" id="friends-see-all" class="profile-card-link hidden">See all friends</a>
+        </div>
+        <div id="business-card" class="profile-card hidden" aria-label="Business info">
+          <h2 id="biz-card-name"></h2>
+          <p id="biz-card-category"></p>
+          <p id="biz-card-location"></p>
+          <p id="biz-card-hours"></p>
+          <p id="biz-card-price"></p>
+          <a id="biz-card-phone" class="hidden"></a>
+          <a id="biz-card-email" class="hidden"></a>
+        </div>
+      </aside>
+
+      <div id="profile-main" aria-label="Main content">
+        <!-- Homepage sections injected here by index.js -->
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ─── Edit Profile Drawer ──────────────────────────────────────────────── -->
+  <div id="edit-drawer" class="hidden" role="dialog" aria-modal="true" aria-label="Edit profile">
+    <div id="edit-drawer-box">
+      <div id="edit-drawer-header">
+        <h2>Edit Profile</h2>
+        <button id="edit-drawer-close" aria-label="Close edit drawer">&#x2715;</button>
+      </div>
+      <div id="edit-drawer-body">
+
+        <div class="drawer-section">
+          <h3>Profile</h3>
+          <label for="edit-display-name">Name</label>
+          <input type="text" id="edit-display-name" placeholder="Your name" aria-label="Display name" />
+          <label for="edit-bio">Bio</label>
+          <textarea id="edit-bio" placeholder="Tell people about yourself" aria-label="Bio" rows="3"></textarea>
+          <label for="edit-status">Status</label>
+          <input type="text" id="edit-status" placeholder="What's on your mind?" aria-label="Status" />
+        </div>
+
+        <div class="drawer-section">
+          <h3>Appearance</h3>
+          <label for="theme-toggle">Theme</label>
+          <select id="theme-toggle" aria-label="Select theme">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+          </select>
+          <label>Background</label>
+          <select id="bg-type" aria-label="Background type">
+            <option value="color">Solid Color</option>
+            <option value="image">Image</option>
+            <option value="gradient">Gradient</option>
+          </select>
+          <button type="button" id="bg-color-btn" aria-label="Pick background color" style="display:flex;align-items:center;gap:0.5rem;background:var(--surface-2);color:var(--text);border:1px solid var(--border);">
+            <span id="bg-color-swatch" style="display:inline-block;width:1.2rem;height:1.2rem;border-radius:4px;border:1px solid var(--border);background:#1a1a2e;"></span>
+            <span id="bg-color-label">#1A1A2E</span>
+          </button>
+          <input type="hidden" id="bg-color" value="#1a1a2e" />
+          <div id="bg-image-wrap" class="hidden">
+            <button type="button" id="bg-image-btn" class="btn-ghost" aria-label="Choose background image">Choose image…</button>
+            <span id="bg-image-label" class="drawer-hint"></span>
+            <input type="file" id="bg-image" accept="image/*" aria-label="Background image" class="hidden" />
+          </div>
+          <label for="custom-css">Custom CSS</label>
+          <textarea id="custom-css" aria-label="Custom CSS" placeholder="/* your styles here */" rows="4"></textarea>
+        </div>
+
+        <div class="drawer-section">
+          <h3>Pages</h3>
+          <p class="drawer-hint">Toggle which pages appear in your nav.</p>
+          <label><input type="checkbox" id="toggle-gallery" /> Gallery</label>
+          <label><input type="checkbox" id="toggle-music" /> Music</label>
+          <label><input type="checkbox" id="toggle-videos" /> Videos</label>
+          <label><input type="checkbox" id="toggle-friends" /> Friends</label>
+          <label><input type="checkbox" id="toggle-guestbook" /> Guestbook</label>
+          <label><input type="checkbox" id="toggle-games" /> Games</label>
+        </div>
+
+        <div class="drawer-section">
+          <h3>Homepage Sections</h3>
+          <p class="drawer-hint">Show content from your other pages directly on your landing page.</p>
+          <label><input type="checkbox" id="home-gallery" /> Show Gallery</label>
+          <label><input type="checkbox" id="home-music" /> Show Music Player</label>
+          <label><input type="checkbox" id="home-videos" /> Show Videos</label>
+          <label><input type="checkbox" id="home-friends" /> Show Friends</label>
+          <label><input type="checkbox" id="home-guestbook" /> Show Guestbook</label>
+        </div>
+
+        <div class="drawer-section">
+          <h3>Mode</h3>
+          <label class="drawer-toggle-row">
+            <div class="toggle-switch">
+              <input type="checkbox" id="mode-toggle" aria-label="Business mode" />
+              <span class="toggle-track"></span>
+            </div>
+            <span>Business Mode</span>
+          </label>
+          <p class="drawer-hint">Hides interactive features, shows business info card.</p>
+        </div>
+
+        <div id="business-profile-form" class="hidden drawer-section" aria-label="Business profile form">
+          <h3>Business Profile</h3>
+          <p class="pii-notice">This information will be publicly visible on your site and in your GitHub repository. Only enter details you are comfortable sharing publicly.</p>
+          <select id="business-type" aria-label="Business type">
+            <option value="">Select type...</option>
+            <option value="LocalBusiness">Local Business</option>
+            <option value="ProfessionalService">Freelancer / Professional</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Store">Store</option>
+            <option value="EventVenue">Event Venue</option>
+          </select>
+          <input type="text" id="business-name" placeholder="Business name" aria-label="Business name" />
+          <input type="text" id="business-category" placeholder="Category (e.g. Graphic Design)" aria-label="Business category" />
+          <input type="text" id="business-city" placeholder="City" aria-label="City" />
+          <input type="text" id="business-region" placeholder="State / Region" aria-label="State or region" />
+          <input type="text" id="business-country" placeholder="Country" aria-label="Country" />
+          <input type="tel" id="business-phone" placeholder="Phone" aria-label="Phone number" />
+          <input type="email" id="business-email" placeholder="Email" aria-label="Business email" />
+          <select id="business-price-range" aria-label="Price range">
+            <option value="">Price range...</option>
+            <option value="$">$</option>
+            <option value="$$">$$</option>
+            <option value="$$$">$$$</option>
+            <option value="$$$$">$$$$</option>
+          </select>
+          <div id="services-input" aria-label="Services offered"></div>
+          <div id="hours-input" aria-label="Operating hours"></div>
+          <button id="save-business-profile" aria-label="Save business profile">Save Business Profile</button>
+        </div>
+
+        <div class="drawer-section" aria-label="Admin utilities">
+          <h3>Admin</h3>
+          <div id="storage-meter" aria-label="Storage usage"></div>
+          <button id="export-backup" class="btn-ghost" aria-label="Export and download backup">Export / Backup</button>
+          <button id="share-page" class="btn-ghost" aria-label="Copy page URL to clipboard">Share My Page</button>
+          <div id="qr-code" aria-label="QR code for your page"></div>
+          <div id="notifications-badge" aria-label="Pending post notifications"></div>
+          <label class="drawer-toggle-row">
+            <input type="checkbox" id="directory-toggle" aria-label="List in directory" />
+            <span>Show my page in the ledger</span>
+          </label>
+          <div id="ledger-domain-row" class="hidden">
+            <p class="drawer-hint">Got a custom domain? <button id="update-ledger-domain" class="btn-inline" aria-label="Update ledger with custom domain">Update ledger</button></p>
+          </div>
+          <div id="dns-helper" class="hidden" aria-label="DNS configuration instructions">
+            <p id="dns-helper-intro"></p>
+            <div id="dns-records"></div>
+            <button id="verify-dns" aria-label="Verify DNS propagation">Verify DNS</button>
+            <p id="dns-verify-result" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <button id="save-customization" aria-label="Save all changes">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Color Picker Modal ───────────────────────────────────────────────── -->
+  <div id="color-picker-modal" class="hidden" role="dialog" aria-modal="true" aria-label="Color picker">
+    <div id="color-picker-box" class="glass">
+      <button id="color-picker-close" aria-label="Close color picker">&#x2715;</button>
+      <h3>Pick a Color</h3>
+      <canvas id="cp-spectrum" width="600" height="400" aria-label="Color spectrum"></canvas>
+      <canvas id="cp-hue" width="600" height="28" aria-label="Hue slider"></canvas>
+      <div id="cp-preview-row">
+        <div id="cp-preview"></div>
+        <div id="cp-values">
+          <div class="cp-val-row">
+            <span class="cp-val-label">HEX</span>
+            <span id="cp-hex" class="cp-val-field">#FF0000</span>
+          </div>
+          <div class="cp-val-row">
+            <span class="cp-val-label">RGB</span>
+            <span id="cp-rgb" class="cp-val-field">rgb(255, 0, 0)</span>
+          </div>
+        </div>
+      </div>
+      <button id="cp-apply" aria-label="Apply selected color">Apply Color</button>
+    </div>
+  </div>
+
+  <div id="first-time-wizard" class="hidden" role="dialog" aria-modal="true" aria-label="Welcome setup wizard">
+    <div id="wizard-box" class="glass">
+      <h2>Welcome to your page ✦</h2>
+      <p>Let's get you set up. You can skip any step.</p>
+      <div class="wizard-step">
+        <label for="wizard-status">Set a status</label>
+        <input type="text" id="wizard-status" placeholder="What's on your mind?" aria-label="Status" />
+      </div>
+      <div class="wizard-step">
+        <label>Upload a cover photo</label>
+        <button id="wizard-cover-btn" aria-label="Upload cover photo">Choose Photo</button>
+        <input type="file" id="wizard-cover-input" accept="image/*" class="hidden" aria-label="Cover photo file" />
+      </div>
+      <div class="wizard-step">
+        <label>Choose which pages to show</label>
+        <div class="wizard-toggles">
+          <label><input type="checkbox" id="wiz-gallery"   checked /> Gallery</label>
+          <label><input type="checkbox" id="wiz-music"     checked /> Music</label>
+          <label><input type="checkbox" id="wiz-videos"    checked /> Videos</label>
+          <label><input type="checkbox" id="wiz-friends"   checked /> Friends</label>
+          <label><input type="checkbox" id="wiz-guestbook" checked /> Guestbook</label>
+          <label><input type="checkbox" id="wiz-games"     checked /> Games</label>
+        </div>
+      </div>
+      <div class="wizard-actions">
+        <button id="wizard-save" aria-label="Save and finish setup">Save &amp; Finish</button>
+        <button id="wizard-dismiss" class="btn-ghost" aria-label="Dismiss setup wizard">Skip for now</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="auth.js"></script>
+  <script src="github-api.js"></script>
+  <script src="media.js"></script>
+  <script src="feeds.js"></script>
+  <script src="business.js"></script>
+  <script src="admin.js"></script>
+  <script src="nav.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

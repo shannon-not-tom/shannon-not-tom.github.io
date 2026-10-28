@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' https: data:; media-src 'self'; frame-src https://www.youtube.com;" />
+  <title>Games</title>
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script src="theme.js"></script>
+
+  <nav id="nav-drawer" aria-label="Site navigation"></nav>
+  <button id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">&#9776;</button>
+
+  <main id="games-page">
+    <h1>Games</h1>
+
+    <div id="game-picker" aria-label="Game selection">
+      <button class="game-tile" data-game="tetris" aria-label="Play Tetris">
+        <img class="game-icon game-icon-dark" src="assets/tetris-white.svg" alt="">
+        <img class="game-icon game-icon-light" src="assets/tetris-black.svg" alt="">
+        <span>Tetris</span>
+      </button>
+      <button class="game-tile" data-game="pacman" aria-label="Play Pac-Man">
+        <img class="game-icon game-icon-dark" src="assets/packman-white.svg" alt="">
+        <img class="game-icon game-icon-light" src="assets/packman-black.svg" alt="">
+        <span>Pac-Man</span>
+      </button>
+      <button class="game-tile" data-game="snake" aria-label="Play Snake">
+        <img class="game-icon game-icon-dark" src="assets/snake-white.svg" alt="">
+        <img class="game-icon game-icon-light" src="assets/snake-black.svg" alt="">
+        <span>Snake</span>
+      </button>
+      <button class="game-tile" data-game="breakout" aria-label="Play Breakout">
+        <img class="game-icon game-icon-dark" src="assets/breakout-white.svg" alt="">
+        <img class="game-icon game-icon-light" src="assets/breakout-black.svg" alt="">
+        <span>Breakout</span>
+      </button>
+      <button class="game-tile" data-game="spaceinvaders" aria-label="Play Space Invaders">
+        <img class="game-icon game-icon-dark" src="assets/space-invaders-white.svg" alt="">
+        <img class="game-icon game-icon-light" src="assets/space-invaders-black.svg" alt="">
+        <span>Space Invaders</span>
+      </button>
+    </div>
+
+    <div id="game-viewport" class="hidden" aria-label="Game viewport">
+      <div id="game-hud">
+        <button id="game-back" class="hidden" aria-label="Back to game picker">&#8592; Back</button>
+        <button id="game-pause" class="hidden" aria-label="Pause game">&#9208;</button>
+      </div>
+      <div id="orient-hint" class="hidden">&#8635; Rotate for best experience</div>
+      <canvas id="game-canvas" aria-label="Game canvas"></canvas>
+      <div id="game-login-hint" class="hidden">Log in to save your high score to your page</div>
+      <!-- D-pad: tetris, snake, pacman -->
+      <div id="ctrl-dpad" class="touch-controls hidden" aria-hidden="true">
+        <div class="dpad">
+          <button class="dpad-btn dpad-up"    data-key="ArrowUp">&#9650;</button>
+          <button class="dpad-btn dpad-left"  data-key="ArrowLeft">&#9664;</button>
+          <button class="dpad-btn dpad-right" data-key="ArrowRight">&#9654;</button>
+          <button class="dpad-btn dpad-down"  data-key="ArrowDown">&#9660;</button>
+          <button class="dpad-btn dpad-drop"  data-key=" ">DROP</button>
+        </div>
+      </div>
+      <!-- Left/Right/Fire: space invaders -->
+      <div id="ctrl-shooter" class="touch-controls hidden" aria-hidden="true">
+        <button id="si-left"  class="shoot-btn">&#9664;</button>
+        <button id="si-fire"  class="shoot-btn shoot-fire">FIRE</button>
+        <button id="si-right" class="shoot-btn">&#9654;</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="nav.js"></script>
+  <script src="games/tetris.js"></script>
+  <script src="games/pacman.js"></script>
+  <script src="games/snake.js"></script>
+  <script src="games/breakout.js"></script>
+  <script src="games/spaceinvaders.js"></script>
+  <script src="games.js"></script>
+</body>
+</html>
